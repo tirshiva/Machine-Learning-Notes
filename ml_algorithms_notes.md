@@ -5,7 +5,8 @@
 2. [Unsupervised Learning](#unsupervised-learning)
 3. [Reinforcement Learning](#reinforcement-learning)
 4. [Model Evaluation Metrics](#model-evaluation-metrics)
-5. [Common Interview Questions](#common-interview-questions)
+5. [ML Ops (Machine Learning Operations)](#ml-ops-machine-learning-operations)
+6. [Common Interview Questions](#common-interview-questions)
 
 ## Supervised Learning
 
@@ -162,46 +163,6 @@
   - May lose important information
   - Assumes linear relationships
   - Sensitive to scaling
-
-## Reinforcement Learning
-
-### 1. Q-Learning
-- **Type**: Model-free RL
-- **Key Concepts**:
-  - Q-table for state-action pairs
-  - Temporal difference learning
-  - Exploration vs exploitation
-- **Use Cases**:
-  - Game playing
-  - Robotics
-  - Autonomous systems
-- **Advantages**:
-  - No model required
-  - Can handle stochastic environments
-  - Converges to optimal policy
-- **Disadvantages**:
-  - Slow convergence
-  - Memory intensive
-  - Curse of dimensionality
-
-### 2. Deep Q-Networks (DQN)
-- **Type**: Deep RL
-- **Key Concepts**:
-  - Neural network for Q-value approximation
-  - Experience replay
-  - Target network
-- **Use Cases**:
-  - Atari games
-  - Robotics
-  - Resource management
-- **Advantages**:
-  - Handles high-dimensional state spaces
-  - Can learn complex policies
-  - More stable than traditional Q-learning
-- **Disadvantages**:
-  - Requires significant computation
-  - Hyperparameter sensitive
-  - May overestimate Q-values
 
 ## Model Evaluation Metrics
 
@@ -366,6 +327,255 @@
 - **For Classification**:
   - Analyze misclassified examples
   - Look for patterns in errors
+
+## ML Ops (Machine Learning Operations)
+
+### 1. Version Control and Experiment Tracking
+#### Tools and Techniques
+- **MLflow**
+  - Experiment tracking
+  - Model versioning
+  - Model registry
+  - Deployment management
+- **DVC (Data Version Control)**
+  - Data versioning
+  - Pipeline management
+  - Experiment tracking
+- **Weights & Biases**
+  - Experiment tracking
+  - Model visualization
+  - Dataset versioning
+- **Neptune.ai**
+  - Experiment tracking
+  - Model metadata management
+  - Team collaboration
+
+#### Best Practices
+- Track all experiments with parameters
+- Version control for:
+  - Code
+  - Data
+  - Models
+  - Configurations
+- Document experiment results
+- Maintain reproducibility
+
+### 2. Model Deployment
+#### Containerization
+- **Docker**
+  - Package models and dependencies
+  - Ensure consistency across environments
+  - Easy deployment and scaling
+- **Kubernetes**
+  - Container orchestration
+  - Auto-scaling
+  - Load balancing
+  - High availability
+
+#### Model Serving
+- **TensorFlow Serving**
+  - High-performance serving
+  - Model versioning
+  - A/B testing
+- **TorchServe**
+  - PyTorch model serving
+  - Model versioning
+  - REST API endpoints
+- **Seldon Core**
+  - Model serving on Kubernetes
+  - Advanced deployment patterns
+  - Monitoring and explainability
+
+### 3. Model Monitoring
+#### Performance Monitoring
+- **Data Drift Detection**
+  - Feature drift
+  - Target drift
+  - Concept drift
+- **Model Performance Metrics**
+  - Prediction latency
+  - Throughput
+  - Error rates
+  - Resource utilization
+
+#### Tools
+- **Evidently**
+  - Data quality monitoring
+  - Model performance analysis
+  - Data drift detection
+- **Prometheus**
+  - Metrics collection
+  - Alerting
+  - Time series data
+- **Grafana**
+  - Visualization
+  - Dashboard creation
+  - Alert management
+
+### 4. CI/CD for ML
+#### Continuous Integration
+- **Testing**
+  - Unit tests
+  - Integration tests
+  - Model validation tests
+  - Data validation tests
+- **Code Quality**
+  - Linting
+  - Type checking
+  - Code coverage
+
+#### Continuous Deployment
+- **Automated Pipelines**
+  - Model training
+  - Model evaluation
+  - Model deployment
+- **Tools**
+  - GitHub Actions
+  - GitLab CI
+  - Jenkins
+  - Azure DevOps
+
+### 5. Feature Store
+#### Purpose
+- Centralized feature management
+- Feature reuse
+- Consistent feature computation
+- Real-time feature serving
+
+#### Tools
+- **Feast**
+  - Feature definition
+  - Feature serving
+  - Offline/online feature storage
+- **Hopsworks**
+  - Feature store
+  - Model registry
+  - Experiment tracking
+- **Tecton**
+  - Feature platform
+  - Real-time feature serving
+  - Feature monitoring
+
+### 6. Model Registry
+#### Features
+- Model versioning
+- Model metadata
+- Model lineage
+- Model stage management
+
+#### Tools
+- **MLflow Model Registry**
+  - Version control
+  - Stage transitions
+  - Model annotations
+- **Azure ML Model Registry**
+  - Model versioning
+  - Model deployment
+  - Model monitoring
+
+### 7. Data Pipeline Management
+#### Components
+- **Data Ingestion**
+  - Batch processing
+  - Stream processing
+  - Data validation
+- **Data Transformation**
+  - Feature engineering
+  - Data cleaning
+  - Data normalization
+- **Data Storage**
+  - Raw data
+  - Processed data
+  - Feature store
+
+#### Tools
+- **Apache Airflow**
+  - Workflow orchestration
+  - Task scheduling
+  - Pipeline monitoring
+- **Kubeflow**
+  - ML pipeline orchestration
+  - Experiment tracking
+  - Model serving
+- **Prefect**
+  - Workflow management
+  - Task scheduling
+  - Pipeline monitoring
+
+### 8. Security and Compliance
+#### Security Measures
+- **Model Security**
+  - Model encryption
+  - Access control
+  - Secure serving
+- **Data Security**
+  - Data encryption
+  - Access control
+  - Data masking
+- **Infrastructure Security**
+  - Network security
+  - Container security
+  - API security
+
+#### Compliance
+- **Data Privacy**
+  - GDPR compliance
+  - Data anonymization
+  - Privacy-preserving ML
+- **Model Governance**
+  - Model documentation
+  - Audit trails
+  - Compliance reporting
+
+### 9. Cost Optimization
+#### Strategies
+- **Resource Optimization**
+  - Auto-scaling
+  - Resource allocation
+  - Cost monitoring
+- **Model Optimization**
+  - Model quantization
+  - Model pruning
+  - Batch processing
+- **Infrastructure Optimization**
+  - Cloud cost management
+  - Resource scheduling
+  - Spot instances
+
+#### Tools
+- **Cloud Cost Management**
+  - AWS Cost Explorer
+  - Azure Cost Management
+  - Google Cloud Billing
+- **Resource Monitoring**
+  - CloudWatch
+  - Azure Monitor
+  - Google Cloud Monitoring
+
+### 10. Best Practices
+#### Development
+- Use version control for all components
+- Implement automated testing
+- Document all processes
+- Follow coding standards
+
+#### Deployment
+- Use containerization
+- Implement CI/CD pipelines
+- Monitor model performance
+- Plan for rollbacks
+
+#### Maintenance
+- Regular model retraining
+- Performance monitoring
+- Security updates
+- Cost optimization
+
+#### Team Collaboration
+- Clear documentation
+- Standardized processes
+- Regular reviews
+- Knowledge sharing
 
 ## Common Interview Questions
 
